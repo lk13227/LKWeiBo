@@ -1,0 +1,6 @@
+framework module Pods_LKWeiBo {
+  umbrella header "Pods-LKWeiBo-umbrella.h"
+
+  export *
+  module * { export * }
+}

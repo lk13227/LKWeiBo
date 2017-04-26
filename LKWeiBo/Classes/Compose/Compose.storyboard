@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="biR-dD-K5Z">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="7ls-qw-z3I">
+            <objects>
+                <navigationController id="AuO-F9-8E2" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="CDS-SA-Wan">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="biR-dD-K5Z" kind="relationship" relationship="rootViewController" id="GWQ-r6-SSz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LF9-jB-lcM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1046" y="-70"/>
+        </scene>
+        <!--Compose View Controller-->
+        <scene sceneID="SWX-Ev-ev7">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="biR-dD-K5Z" customClass="ComposeViewController" customModule="LKWeiBo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="QrH-WB-ELI"/>
+                        <viewControllerLayoutGuide type="bottom" id="LtC-kN-kjm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f9d-nK-XPd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2x8-yY-09A" customClass="LKTextView" customModule="LKWeiBo" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="biR-dD-K5Z" id="Md7-7a-wV6"/>
+                                </connections>
+                            </textView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sBH-Dd-BGh">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Mjq-qo-8NZ"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Jz6-Oh-a4W"/>
+                                    <barButtonItem image="compose_toolbar_picture" id="suR-Gb-UMc">
+                                        <connections>
+                                            <action selector="pictureBtnClick:" destination="biR-dD-K5Z" id="ALC-nH-fny"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Sc2-LB-GFV"/>
+                                    <barButtonItem image="compose_mentionbutton_background" id="Lkc-ZA-9Kk"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="XWZ-v5-ByY"/>
+                                    <barButtonItem image="compose_trendbutton_background" id="322-Y0-AYA"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="8Pg-SS-sjC"/>
+                                    <barButtonItem image="compose_emoticonbutton_background" id="kj6-pk-WDY">
+                                        <connections>
+                                            <action selector="emoticonBtnClick:" destination="biR-dD-K5Z" id="TGJ-rq-O7f"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="2KY-mZ-i5Y"/>
+                                    <barButtonItem image="compose_addbutton_background" id="HEf-ph-J0D"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="XP4-Sk-ipI"/>
+                                </items>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </toolbar>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2x8-yY-09A" secondAttribute="trailing" id="IIe-Hm-Vpy"/>
+                            <constraint firstItem="sBH-Dd-BGh" firstAttribute="leading" secondItem="f9d-nK-XPd" secondAttribute="leading" id="JvH-qO-gKV"/>
+                            <constraint firstItem="2x8-yY-09A" firstAttribute="leading" secondItem="f9d-nK-XPd" secondAttribute="leading" id="K8q-8Q-5rG"/>
+                            <constraint firstItem="2x8-yY-09A" firstAttribute="top" secondItem="QrH-WB-ELI" secondAttribute="bottom" id="NUw-xg-1D0"/>
+                            <constraint firstItem="LtC-kN-kjm" firstAttribute="top" secondItem="2x8-yY-09A" secondAttribute="bottom" id="TS5-bF-Jgu"/>
+                            <constraint firstItem="LtC-kN-kjm" firstAttribute="top" secondItem="sBH-Dd-BGh" secondAttribute="bottom" id="rTN-IH-MF2"/>
+                            <constraint firstAttribute="trailing" secondItem="sBH-Dd-BGh" secondAttribute="trailing" id="uyH-s7-wDc"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Iig-By-XqT">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" title="关闭" id="ffR-MR-a2b">
+                            <connections>
+                                <action selector="closeBtnClick" destination="biR-dD-K5Z" id="W4H-T8-UVr"/>
+                            </connections>
+                        </barButtonItem>
+                        <view key="titleView" contentMode="scaleToFill" id="Yer-Ab-e1c" customClass="LKTitleView" customModule="LKWeiBo" customModuleProvider="target">
+                            <rect key="frame" x="112.5" y="5.5" width="150" height="33"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </view>
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="发送" id="Hkc-KA-qVO">
+                            <connections>
+                                <action selector="sendBtnClick" destination="biR-dD-K5Z" id="OMQ-PH-Fde"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="customTextView" destination="2x8-yY-09A" id="Syk-ZI-77x"/>
+                        <outlet property="sendItem" destination="Hkc-KA-qVO" id="1WK-wY-kty"/>
+                        <outlet property="toolbarBottomCons" destination="rTN-IH-MF2" id="xKu-N6-PnC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G7F-yx-CdL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-170.40000000000001" y="-71.514242878560722"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="compose_addbutton_background" width="24" height="24"/>
+        <image name="compose_emoticonbutton_background" width="24" height="24"/>
+        <image name="compose_mentionbutton_background" width="24" height="24"/>
+        <image name="compose_toolbar_picture" width="24" height="24"/>
+        <image name="compose_trendbutton_background" width="24" height="24"/>
+    </resources>
+</document>

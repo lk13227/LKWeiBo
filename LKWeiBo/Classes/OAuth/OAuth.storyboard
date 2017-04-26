@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bjT-L4-w4I">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Auth View Controller-->
+        <scene sceneID="VM3-MS-lHh">
+            <objects>
+                <viewController id="bjT-L4-w4I" customClass="OAuthViewController" customModule="LKWeiBo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s4p-gy-GW3"/>
+                        <viewControllerLayoutGuide type="bottom" id="qCO-9m-CsY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iI1-d7-BEd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QRW-IY-WmX">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="delegate" destination="bjT-L4-w4I" id="8vR-DG-dik"/>
+                                </connections>
+                            </webView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xfU-bT-ZFq">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="SMO-rb-ltf"/>
+                                </constraints>
+                                <items>
+                                    <navigationItem id="lCn-ur-Let">
+                                        <barButtonItem key="leftBarButtonItem" title="填充" id="NEb-3o-0jJ">
+                                            <connections>
+                                                <action selector="autoBtnClick:" destination="bjT-L4-w4I" id="hqq-fB-9YJ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="返回" id="6DS-0d-ska">
+                                            <connections>
+                                                <action selector="backBtnClick" destination="bjT-L4-w4I" id="90A-7h-7D9"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="QRW-IY-WmX" secondAttribute="trailing" id="1cy-vm-sJd"/>
+                            <constraint firstItem="xfU-bT-ZFq" firstAttribute="top" secondItem="s4p-gy-GW3" secondAttribute="bottom" id="5Yi-IY-QIf"/>
+                            <constraint firstItem="QRW-IY-WmX" firstAttribute="top" secondItem="xfU-bT-ZFq" secondAttribute="bottom" id="ROo-x9-8vl"/>
+                            <constraint firstItem="qCO-9m-CsY" firstAttribute="top" secondItem="QRW-IY-WmX" secondAttribute="bottom" id="SuR-Mk-cZf"/>
+                            <constraint firstItem="xfU-bT-ZFq" firstAttribute="leading" secondItem="iI1-d7-BEd" secondAttribute="leading" id="XFh-RV-3bz"/>
+                            <constraint firstItem="QRW-IY-WmX" firstAttribute="leading" secondItem="iI1-d7-BEd" secondAttribute="leading" id="c4K-bh-pzG"/>
+                            <constraint firstAttribute="trailing" secondItem="xfU-bT-ZFq" secondAttribute="trailing" id="nwp-4a-4wZ"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="customWebView" destination="QRW-IY-WmX" id="g5H-g3-lzf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sWj-5T-b1U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-74.400000000000006" y="137.18140929535232"/>
+        </scene>
+    </scenes>
+</document>
